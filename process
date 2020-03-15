@@ -1,0 +1,42 @@
+from os import system
+places = ["Potheri","Guduvanchery","Urapakkam","Vandalur","Perungulathur","Tambaram","Chrompet","pallavaram","Tirusulam","Guindy"]
+mode = ["Bike","Auto","Mini","Micro","Prime"]
+print("Welcome to Uber \n")
+print("Please select your Starting Point")
+for i in range(10):
+  print(i+1,end=" ")
+  print(places[i])
+print("\nEnter Starting point number(1-10)")  
+start = int(input())
+print("\nEnter dropping point number(1-10)") 
+drop = int(input()) 
+print("\nPlease select the type of vehicle")
+for i in range(5):
+  print(i+1,end=" ")
+  print(mode[i]) 
+print("\nEnter vehicle type number(1-10)")  
+type=int(input())  
+_ = system('clear')
+print("Starting Point: " + places[start-1])
+print("Dropping Point: " + places[drop-1])
+print("Vehicle Type: " + mode[type-1])
+fare=0
+dist = abs(start-drop)*5.5
+if(type==1):
+  fare = dist*4+10
+elif(type==2):
+  fare = dist*6+20
+elif(type==3):
+  fare = dist*8+30
+elif(type==4):
+  fare = dist*10+40
+elif(type==5):
+  fare = dist*12+50  
+print("The calculated fare =",fare)
+print("\nConfirm Booking ? (y/n)")   
+ans = input()
+_ = system('clear')
+if(ans=='y'):
+  print("Your driver will be arriving soon!!\nEnjoy the ride!!")   
+elif(ans=='n'): 
+  print("Booking aborted !!") 
